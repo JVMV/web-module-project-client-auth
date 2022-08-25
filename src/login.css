@@ -1,0 +1,29 @@
+.loginform-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 2px red; */
+    height: 500px;
+    width: 500px;
+    margin: 10%;
+    padding: 2%;
+    font-size: 24px;
+}
+#login-label {
+    font-size: 60px;
+}
+
+.loginform {
+    /* border: solid 2px red; */
+}
+.loginform input {
+    padding: 3%;
+    width: 80%
+}
+.loginform button {
+    margin-top: 5%;
+    padding: 3%;
+    width: 88%;
+    background-color: black;
+    color: white;
+}
