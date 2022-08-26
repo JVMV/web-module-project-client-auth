@@ -10,7 +10,7 @@ const initialFormValues = {
 
 export default function LoginForm (props) {
     const [formInput, setFormInput] = useState(initialFormValues)
-    const URL = 'http://localhost:9000/api/'
+    const {url} = props
     const history = useHistory()
 
     const changeHandler = (evt) => {
@@ -21,7 +21,7 @@ export default function LoginForm (props) {
 
     const onSubmit = (evt) => {
         evt.preventDefault()
-        axios.post(URL + 'login', formInput)
+        axios.post(url + 'login', formInput)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
                 setFormInput(initialFormValues)

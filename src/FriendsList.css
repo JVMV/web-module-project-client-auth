@@ -1,0 +1,31 @@
+#friendslist-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: solid 2px red; */
+    height: auto;
+    width: 500px;
+    margin: 10% 10% 10% 35%;
+    padding: 2%;
+    font-size: 18px;
+}
+
+#friend-item {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 2%;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* border: solid 1px orange; */
+}
+#friend-item div span {
+    /* border: solid 1px red; */
+    width: 50%;
+    margin-left: 0%;
+}
+#friendslist-title {
+    font-size: 50px;
+    padding: 1%;
+    font-weight: bold;
+}

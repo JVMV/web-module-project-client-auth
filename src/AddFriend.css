@@ -1,0 +1,11 @@
+.addfriend-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 2px red; */
+    height: 500px;
+    width: 500px;
+    margin: 10%;
+    padding: 2%;
+    font-size: 24px;
+}
