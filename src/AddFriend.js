@@ -13,6 +13,13 @@ export default function AddFriend(props) {
     const { setMessage, setFriends } = props
     const history = useHistory()
 
+    if(!localStorage.getItem('token')) {
+        history.push('/login')
+        setMessage('Please Login First')
+    } else {
+        setMessage('')
+    }
+
     const onSubmit = evt => {
         evt.preventDefault()
         axiosWithAuth().post(props.url + 'friends', newFriend)

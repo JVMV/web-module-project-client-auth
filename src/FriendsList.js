@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import {axiosWithAuth} from './apiWithAuth'
 import './FriendsList.css'
+import { useHistory } from 'react-router-dom'
 
 
 export default function FriendsList(props) {
-    const { friends, setFriends } = props
+    const { friends, setFriends, setMessage } = props
     const { url } = props
+    const history = useHistory()
 
-    useEffect(() => {
-        axiosWithAuth().get(url + 'friends')
-            .then(res => {
-                setFriends(res.data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
+    if(!localStorage.getItem('token')) {
+        history.push('/login')
+        setMessage('Please Login First')
+    } else {
+        setMessage('')
+    }
 
     useEffect(() => {
         axiosWithAuth().get(url + 'friends')
@@ -26,6 +25,10 @@ export default function FriendsList(props) {
                 console.log(err)
             })
     }, [friends])
+
+    const deleteFriend = () => {
+        return null
+    }
 
 
     return (
@@ -50,6 +53,10 @@ export default function FriendsList(props) {
                         <div>
                             <strong>Email: </strong>
                             <span>{email}</span>
+                        </div>
+                        <div>
+                            <button>Edit</button>
+                            <button>Delete</button>
                         </div>
                     </div>
                 )
