@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import './login.css'
+import axios from 'axios'
 
 const initialFormValues = {
     username: '',
@@ -8,6 +10,8 @@ const initialFormValues = {
 
 export default function LoginForm (props) {
     const [formInput, setFormInput] = useState(initialFormValues)
+    const URL = 'http://localhost:9000/api/'
+    const history = useHistory()
 
     const changeHandler = (evt) => {
         console.log(evt)
@@ -17,21 +21,30 @@ export default function LoginForm (props) {
 
     const onSubmit = (evt) => {
         evt.preventDefault()
-        console.log('it wrks')
+        axios.post(URL + 'login', formInput)
+            .then(res => {
+                localStorage.setItem('token', res.data.token)
+                setFormInput(initialFormValues)
+                history.push('/friends')
+            })
+            .catch(err => {
+                debugger
+                console.log(err)
+            })
     }
 
     return (
         <div className='loginform-container'>
-            <form className='loginform' onSubmit={() => onSubmit()}>
+            <form className='loginform' onSubmit={onSubmit}>
                 <label><span id='login-label'>LOGIN</span><br />
                     <label htmlFor='username'>USERNAME<br />
-                        <input onChange={changeHandler} value={formInput.username} name='username' id='username' type='text' placeholder='enter username'/>
+                        <input minLength={3} onChange={changeHandler} value={formInput.username} name='username' id='username' type='text' placeholder='enter username'/>
                     </label><br />
                     <label htmlFor='password'>PASSWORD<br />
-                        <input onChange={changeHandler} value={formInput.password} name='password' id='password' type='password' placeholder='enter password' />
+                        <input minLength={3} onChange={changeHandler} value={formInput.password} name='password' id='password' type='password' placeholder='enter password' />
                     </label>
                 </label><br />
-                <button type='submit'>Submit</button>
+                <button id='submit-btn'>Submit</button>
             </form>
         </div>
     )
