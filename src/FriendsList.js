@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import {axiosWithAuth} from './apiWithAuth'
 import './FriendsList.css'
 import { useHistory } from 'react-router-dom'

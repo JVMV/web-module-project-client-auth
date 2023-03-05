@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import { useHistory, BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
+import { useHistory, Route, Switch, NavLink } from 'react-router-dom';
 import LoginForm from './login'
 import FriendsList from './FriendsList'
 import AddFriend from './AddFriend'
 
-function App(props) {
+function App() {
   const URL = 'http://localhost:9000/api/'
   const [friends, setFriends] = useState([])
   const [message, setMessage] = useState('')

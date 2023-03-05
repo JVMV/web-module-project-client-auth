@@ -2,7 +2,7 @@ const credentials = {
     username: "Bloom",
     password: "Tech",
     role: "admin",
-    token:"ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98"
+    token:"ahuBHeeyeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsb29tIiwicGFzc3dvcmQiOiJUZWNoIiwicm9sZSI6ImFkbWluIn0.mRNgAevwtfwRZ7jpAUkUP9g9HM9-SKwKxdd3dXjtNCcJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMyIsIm5hbWUiOiJCbG9vbSBUZWNoIiwicm9sZSI6ImFkbWluIn0.SLyyaBbb4q71cw_8FpK_r8CnGvlKtAPtY9D-wnJB_zMjkJJeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMyIsIm5hbWUiOiJCbG9vbSBUZWNoIiwicm9sZSI6IkFkbWluIn0.18w3BB-Lctw4r9tnzYq6j_3Dk_OtcYCfW4CLs9PSIhUiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98"
 }
 
 module.exports = credentials;

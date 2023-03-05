@@ -14,7 +14,6 @@ export default function LoginForm (props) {
     const history = useHistory()
 
     const changeHandler = (evt) => {
-        console.log(evt)
         const { name, value } = evt.target
         setFormInput({...formInput, [name]: value})
     }
@@ -28,7 +27,6 @@ export default function LoginForm (props) {
                 history.push('/friends')
             })
             .catch(err => {
-                debugger
                 console.log(err)
             })
     }
